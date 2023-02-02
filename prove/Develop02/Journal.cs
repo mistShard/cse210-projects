@@ -10,21 +10,21 @@ namespace ConsoleApplication1
     using System.IO;
     class Journal
     {
-        private List<Entry> entries = new List<Entry>();
+        private List<Entry> _entries = new List<Entry>();
 
 
         public void AddEntry(Entry entry)
         {
-            entries.Add(entry);
+            _entries.Add(entry);
         }
 
         public override string ToString()
         {
-            return string.Join("\n\n", entries);
+            return string.Join("\n\n", _entries);
         }
         public void LoadEntriesFromFile(string filename)
         {
-            entries.Clear();
+            _entries.Clear();
             TextFieldParser parser = new TextFieldParser(filename);
             parser.HasFieldsEnclosedInQuotes = true;
             parser.SetDelimiters(",");
@@ -37,15 +37,15 @@ namespace ConsoleApplication1
         }
         public void SaveEntriesToFile(string filename)
         {
-            List<string> lines = new List<string>();
+            List<string> _lines = new List<string>();
             
-            foreach (Entry entry in entries)
+            foreach (Entry entry in _entries)
             {
-                lines.Add(entry.ToCSVString());
+                _lines.Add(entry.ToCSVString());
             }
             using (StreamWriter outputFile = new StreamWriter(filename))
             {
-                outputFile.Write(string.Join("\n", lines));
+                outputFile.Write(string.Join("\n", _lines));
             }
         }
     }

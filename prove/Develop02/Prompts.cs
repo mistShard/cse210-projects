@@ -8,8 +8,8 @@ namespace ConsoleApplication1
 {
     class Prompts
     {
-        private static Random random = new Random();
-        private static List<string> prompts = new List<string>()
+        private static Random _random = new Random();
+        private static List<string> _prompts = new List<string>()
         {
             "Who was the most interesting person I interacted with today?",
             "What was the best part of my day?",
@@ -19,7 +19,7 @@ namespace ConsoleApplication1
         };
         public static string GetRandomPrompt()
         {
-            return prompts[random.Next(prompts.Count)];
+            return _prompts[_random.Next(_prompts.Count)];
         }
     }
 }

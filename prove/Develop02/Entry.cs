@@ -8,27 +8,27 @@ namespace ConsoleApplication1
 {
     class Entry
     {
-        private readonly string prompt;
-        private readonly string response;
-        private readonly DateTime date;
+        private readonly string _prompt;
+        private readonly string _response;
+        private readonly DateTime _date;
 
-        public Entry(string prompt, string response, DateTime date)
+        public Entry(string _prompt, string _response, DateTime _date)
         {
-            this.prompt = prompt;
-            this.response = response;
-            this.date = date;
+            this._prompt = _prompt;
+            this._response = _response;
+            this._date = _date;
         }
         public string GetShortDateString()
         {
-            return date.ToShortDateString();
+            return _date.ToShortDateString();
         }
         public override string ToString()
         {
-            return $"Date: {GetShortDateString()} - Prompt: {prompt}\n{response}";
+            return $"Date: {GetShortDateString()} - Prompt: {_prompt}\n{_response}";
         }
         public string ToCSVString()
         {
-            return $"{date},\"{ReplaceSingleParentheses(prompt)}\",\"{ReplaceSingleParentheses(response)}\"";
+            return $"{_date},\"{ReplaceSingleParentheses(_prompt)}\",\"{ReplaceSingleParentheses(_response)}\"";
         }
 
         private string ReplaceSingleParentheses(string input)
