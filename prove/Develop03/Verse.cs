@@ -3,8 +3,6 @@ using System;
 public class Verse {
     private string _verse;
     
-    private List<int> _blankedindexList;
-    
     public Verse(string verse) {
         _verse = verse;
     }
