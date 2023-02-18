@@ -3,7 +3,7 @@ using System;
 public class Words {
     private List<int> _randomIndexList = new List<int>();
     private List<string> _verseList = new List<string>();
-    Random rnd = new Random();
+    Random _rnd = new Random();
 
     private void PopulateRandomIndexList() {
         for(int i = 0; i < _verseList.Count(); i++) {
@@ -25,7 +25,7 @@ public class Words {
             upperBound = _randomIndexList.Count();
         }
             for(int i = 0; i < upperBound; i++) {
-            int rndNum = rnd.Next(_randomIndexList.Count());
+            int rndNum = _rnd.Next(_randomIndexList.Count());
             int indexNum = _randomIndexList[rndNum];
             _verseList[indexNum] = "___";
             _randomIndexList.RemoveAt(rndNum);
