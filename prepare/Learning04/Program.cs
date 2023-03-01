@@ -16,5 +16,14 @@ class Program
         WritingAssignment stu3 = new WritingAssignment("Benji Nwangele", "High Finance", "The merger of High Finance with High Tech");
         Console.WriteLine(stu3.GetSummary());
         Console.WriteLine(stu3.GetWritingInformation());
+
+        // Thread.Sleep(5000);
+        // Console.WriteLine("Mr is back");
+        // Console.Write("+");
+
+        // Thread.Sleep(500);
+
+        // Console.Write("\b \b"); // Erase the + character
+        // Console.Write("-"); // Replace it with the - character
     }
 }
