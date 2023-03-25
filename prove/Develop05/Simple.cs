@@ -5,13 +5,13 @@ public class Simple : Goals
     private string _goal;
     private string _description;
     private int _points;
-    private string _goalSentence;
+    bool _isComplete = false;
 
-    public void StartSimpleGoals() {
-        SimpleQuestions();
-        CreateSentence();
+    public string StartSimpleGoals() {
+        Questions();
+        return CreateSentence(_goal, _description, _isComplete);
     }
-    private void SimpleQuestions() {
+    protected override void Questions() {
         Console.Write("What is the name of you goal? ");
         string goal = Console.ReadLine();
         _goal = goal;
@@ -23,13 +23,9 @@ public class Simple : Goals
         _points = int.Parse(strPoints);
     }
 
-    protected override void CreateSentence() {
-        string check = "X";
-        string notCheck = "";
-        _goalSentence = $"[{notCheck}] {_goal} ({_description})";
-    }
 
-    public string GetGoalSentence() {
-        return _goalSentence;
+    public override string CreateFileStr()
+    {
+        return $"SimpleGoal:{_goal}<>{_description}<>{_points}<>{_isComplete}";
     }
 }

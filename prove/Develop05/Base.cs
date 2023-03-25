@@ -1,6 +1,7 @@
 using System;
 
-public class Base {
+public class Base 
+{
     private string _menu = @"
 Menu Options:
     1. Create a new Goal
