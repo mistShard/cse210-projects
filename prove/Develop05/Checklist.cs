@@ -4,7 +4,6 @@ public class Checklist : Goals
 {
     private string _goal;
     private string _description;
-    private int _points;
     private int _numOfTimesCompleted = 0;
     private int _bonusGoal;
     private int _bonusPoints;
