@@ -4,7 +4,7 @@ public class Simple : Goals
 {
     private string _goal;
     private string _description;
-    private int _points;
+  
     bool _isComplete = false;
 
     public string StartSimpleGoals() {

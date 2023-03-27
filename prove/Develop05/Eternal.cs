@@ -4,7 +4,6 @@ public class Eternal : Goals
 {
     private string _goal;
     private string _description;
-    private int _points;
     
 
     public string StartEternalGoals() {
