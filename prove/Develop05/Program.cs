@@ -13,7 +13,9 @@ class Program
         List<string> goalsList = new List<string>();
         List<string> goalsToFileList = new List<string>();
         List<string> loadList = new List<string>();
-        
+
+        bool preLoaded = false;
+        List<int> totalPoints = new List<int>();
 
         string menuResponse = b.PrintMenu();
 
@@ -38,27 +40,30 @@ class Program
             }
 
             if (menuResponse == "2") {
-                if (goalsList.Count() == 0) {
-                    Console.WriteLine("\n!!! You do not have any goals recorded !!!");
-                }
-                else {
-                    int index = 1;
-                    Console.WriteLine("These are the goals:");
-                    foreach (string goal in goalsList) {
-                        Console.Write("    " + index + ". ");
-                        Console.WriteLine(goal);
-                        index++;
-                    }
-                }
+                g.ListGoals(goalsList);
             }
 
             if (menuResponse == "3") {
 
-                g.SaveToFile(goalsToFileList, goalsList);   
+                g.SaveToFile(goalsToFileList, goalsList, totalPoints);  
+                b.SetPoints(0); 
             }
 
             if (menuResponse == "4") {
-                g.LoadFromFile(goalsToFileList, goalsList);
+                string files= g.LoadFromFile(totalPoints, goalsToFileList, goalsList, preLoaded, loadList);
+                b.SetPointsList(totalPoints);
+                loadList.Add(files);
+        
+            }
+
+            if (menuResponse == "5") {
+                //g.LoadFromFile(totalPoints, goalsToFileList, goalsList, preLoaded, loadList);
+                g.ListGoals(goalsList);
+                int earnedPoints = g.RecordGoals(goalsList, goalsToFileList);
+                totalPoints.Add(earnedPoints);
+                b.SetPointsList(totalPoints);
+                g.SaveToFile(goalsToFileList, goalsList, totalPoints);
+                b.SetPoints(0);
             }
             
             menuResponse = b.PrintMenu();

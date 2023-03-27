@@ -12,10 +12,18 @@ Menu Options:
     6. Quit
 Select a choice from the menu: ";
 
-    private int _points = 0;
+    protected int _points = 0;
+
+    public void SetPointsList(List<int> points) {
+        _points = points.Sum();
+    }
 
     public void SetPoints(int points) {
-        _points += points;
+        _points = points;
+    }
+
+    public int GetPoints() {
+        return _points;
     }
 
     public string PrintMenu()

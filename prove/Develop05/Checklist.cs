@@ -46,7 +46,7 @@ public class Checklist : Goals
 
     public override string CreateFileStr()
     {
-        return $"ChecklistGoal:{_goal}<>{_description}<>{_points}<>{_bonusPoints}<>{_bonusGoal}<>{_numOfTimesCompleted}";
+        return $"ChecklistGoal:{_goal}<>{_description}<>{_points}<>{_bonusPoints}<>{_bonusGoal}<>{_numOfTimesCompleted}<>{false}";
     }
     
 }

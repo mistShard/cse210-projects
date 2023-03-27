@@ -1,0 +1,4 @@
+280
+SimpleGoal:remind president about the photocopier and AC unit<>Ask facilities<>50<>True
+SimpleGoal:wake<>get up early<>30<>True
+ChecklistGoal:pray<>every morning and evening<>21<>51<>4<>1<>False
