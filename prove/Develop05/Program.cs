@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 
+// I added a way to receive a mega bonus if the user reaches a certain requirement
+
 class Program
 {
     static void Main(string[] args)

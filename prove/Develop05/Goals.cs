@@ -182,7 +182,15 @@ Which type of goal would you like to create: ";
                 goalsToFileList.RemoveAt(goalsToFileList.IndexOf(finishedGoal) + 1);
                 Console.WriteLine($"Congratulations you received a bonus of: {bonusPoints} points");
                 return int.Parse(points) + int.Parse(bonusPoints);
+             }
+
+            else if ((int.Parse(bonusGoal) * 2).ToString() == numCompleted) {
+                goalsToFileList.Insert(goalsToFileList.IndexOf(goal), newGoal);
+                goalsToFileList.RemoveAt(goalsToFileList.IndexOf(newGoal) + 1);
+                Console.WriteLine($"Congratulations you received a a Mega bonus of: {int.Parse(bonusPoints) * 2} points");
+                return int.Parse(points) + int.Parse(bonusPoints) * 2;
             }
+           
             else {
                 goalsToFileList.Insert(goalsToFileList.IndexOf(goal), newGoal);
                 goalsToFileList.RemoveAt(goalsToFileList.IndexOf(newGoal) + 1);
