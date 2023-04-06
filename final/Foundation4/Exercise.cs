@@ -1,6 +1,6 @@
 using System;
 
-public class Exercise
+public abstract class Exercise
 {
     private DateTime _date = DateTime.UtcNow;
     private int _timeInMinutes;
@@ -29,17 +29,11 @@ public class Exercise
         return _timeInMinutes;
     }
 
-    public virtual double GetDistance() {
-        return 1;
-    }
+    public abstract double GetDistance();
 
-    public virtual double GetSpeed() {
-        return 1;
-    }
+    public abstract double GetSpeed();
 
-    public virtual double GetPace() {
-        return 1;
-    }
+    public abstract double GetPace();
 
     public string GetSummary(string date, double distance, double speed, double pace) {
         return $"{date} {_activityType} ({_timeInMinutes} min)- Distance: {distance} miles, Speed: {speed}mph, Pace: {pace} min per mile ";
