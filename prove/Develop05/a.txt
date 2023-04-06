@@ -1,0 +1,6 @@
+Last modified: 4/6/2023 10:56:28 AM
+1470
+SimpleGoal:Wake up <> I would like to wake up buy 5-30 everyday <> 50 <> True
+EternalGoal:Marry <> Get sealed in the Temple of God <> 1000
+ChecklistGoal:Study for an hour each morning <> I woyuld like to study technical subjects for an hour every morning <> 30 <> 100 <> 2 <> 3
+SimpleGoal:sleep <> Go to sleep early <> 100 <> True

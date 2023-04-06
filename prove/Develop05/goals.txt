@@ -1,3 +1,0 @@
-68
-SimpleGoal:wake<>Get up eawrly in the morning<>10<>True
-ChecklistGoal:pray<>every day and night<>5<>55<>5<>5<>True
