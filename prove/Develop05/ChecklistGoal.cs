@@ -18,31 +18,14 @@ public class ChecklistGoal : Goal
         _bonusPoints = bonusPoints;
     }
 
-    public override void SetTimesCompleted(int timesCompleted) {
-        _timesCompleted += timesCompleted;
-    }
-
-    public override int GetTimesToComplete() {
-        return _timesToComplete;
-    }
-
-    public override int GetTimesCompleted() {
-        return _timesCompleted;
-    }
-
-    public override int GetBonusPoints()
-    {
-        return _bonusPoints;
-    }
-
     public override string PrintList()
     {
         string sentence;
         if(_timesCompleted == _timesToComplete) {
-            sentence = ($"[X] {GetGoalType()} ({GetDescription()}) -- Currently Completed: {_timesCompleted}/{_timesToComplete}");
+            sentence = ($"[X] {GetGoalName()} ({GetDescription()}) -- Currently Completed: {_timesCompleted}/{_timesToComplete}");
         }
         else {
-            sentence = ($"[ ] {GetGoalType()} ({GetDescription()}) -- Currently Completed: {_timesCompleted}/{_timesToComplete}");
+            sentence = ($"[ ] {GetGoalName()} ({GetDescription()}) -- Currently Completed: {_timesCompleted}/{_timesToComplete}");
         }
 
         return sentence;
@@ -53,4 +36,21 @@ public class ChecklistGoal : Goal
         return $"{GetGoalType()}:{GetGoalName()} <> {GetDescription()} <> {GetPoints()} <> {_bonusPoints} <> {_timesToComplete} <> {_timesCompleted}";
     }
 
+    public override int RecordEvent()
+    {
+        _timesCompleted += 1;
+        
+        int points = GetPoints();
+
+        if(_timesCompleted % _timesToComplete == 0) {
+            SetIsComplete(true);
+
+            Console.WriteLine($"Congratulations you earned a bonus of {_bonusPoints} points");
+
+            return _bonusPoints + points;
+
+        }
+
+        return points;
+    }
 }

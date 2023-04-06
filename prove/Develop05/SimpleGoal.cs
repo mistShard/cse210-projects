@@ -23,4 +23,11 @@ public class SimpleGoal : Goal
         return base.AddToFileList();
     }
 
+    public override int RecordEvent()
+    {
+        SetIsComplete(true);
+        int points = GetPoints();
+
+        return points;
+    }
 }

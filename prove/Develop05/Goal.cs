@@ -30,11 +30,11 @@ public abstract class Goal
         return _description;
     }
 
-    public int GetPoints() {
+    protected int GetPoints() {
         return _points;
     }
 
-    public string GetGoalType() {
+    protected string GetGoalType() {
         return _type;
     }
 
@@ -42,7 +42,7 @@ public abstract class Goal
         return _isComplete;
     }
 
-    public void SetIsComplete(bool isComplete) {
+    protected void SetIsComplete(bool isComplete) {
         _isComplete = isComplete;
     }
 
@@ -62,19 +62,5 @@ public abstract class Goal
         return $"{_type}:{_goalName} <> {_description} <> {_points} <> {_isComplete}";
     }
 
-    public virtual void SetTimesCompleted(int timesCompleted) {
-        
-    }
-
-    public virtual int GetTimesToComplete() {
-        return -1;
-    }
-
-    public virtual int GetTimesCompleted() {
-        return -1;
-    }
-
-    public virtual int GetBonusPoints() {
-        return -1;
-    }
+    public abstract int RecordEvent();
 }

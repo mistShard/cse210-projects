@@ -30,39 +30,37 @@ public class GoalManager
         int index = int.Parse(strIndex) - 1;
         Goal goal = goalsList[index];
 
-        string goalType = goal.GetGoalType();
+        int points = goal.RecordEvent();
+        // string goalType = goal.GetGoalType();
 
-        int points = 0;
+        // int points = 0;
 
-        if(goalType == "SimpleGoal") {
-            goal.SetIsComplete(true);
-            points = goal.GetPoints();
-        }
-        else if(goalType == "EternalGoal") {
-            points = goal.GetPoints();
-        }
-        else if(goalType == "ChecklistGoal") {
-            goal.SetTimesCompleted(1);
+        // if(goalType == "SimpleGoal") {
+        //     goal.SetIsComplete(true);
+        //     points = goal.GetPoints();
+        // }
+        // else if(goalType == "EternalGoal") {
+        //     points = goal.GetPoints();
+        // }
+        // else if(goalType == "ChecklistGoal") {
+        //     goal.SetTimesCompleted(1);
             
-            int timesToComplete = goal.GetTimesToComplete();
-            int timesCompleted = goal.GetTimesCompleted();
-            int bonusPoints = goal.GetBonusPoints();
+        //     int timesToComplete = goal.GetTimesToComplete();
+        //     int timesCompleted = goal.GetTimesCompleted();
+        //     int bonusPoints = goal.GetBonusPoints();
 
-            if(timesCompleted % timesToComplete == 0) {
-                points = bonusPoints;
-                points += goal.GetPoints();
+        //     if(timesCompleted % timesToComplete == 0) {
+        //         points = bonusPoints;
+        //         points += goal.GetPoints();
 
-                goal.SetIsComplete(true);
-                Console.WriteLine($"Congratulations!! You get a bonus of {bonusPoints} points");
-            }
-            else {
-                points = goal.GetPoints();
-            }
-
-        }
-
+        //         goal.SetIsComplete(true);
+        //         Console.WriteLine($"Congratulations!! You get a bonus of {bonusPoints} points");
+        //     }
+        //     else {
+        //         points = goal.GetPoints();
+        //     }
         return points;
-    }
+        }
 
     public void ListGoals(List<Goal> goalsList) {
         if(goalsList.Count > 0) {

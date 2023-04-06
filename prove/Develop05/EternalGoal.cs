@@ -23,4 +23,10 @@ public class EternalGoal : Goal
         return $"{GetGoalType()}:{GetGoalName()} <> {GetDescription()} <> {GetPoints()}";
     }
 
+    public override int RecordEvent()
+    {
+        int points = GetPoints();
+
+        return points;
+    }
 }
