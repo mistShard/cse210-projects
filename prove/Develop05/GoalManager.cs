@@ -31,34 +31,7 @@ public class GoalManager
         Goal goal = goalsList[index];
 
         int points = goal.RecordEvent();
-        // string goalType = goal.GetGoalType();
-
-        // int points = 0;
-
-        // if(goalType == "SimpleGoal") {
-        //     goal.SetIsComplete(true);
-        //     points = goal.GetPoints();
-        // }
-        // else if(goalType == "EternalGoal") {
-        //     points = goal.GetPoints();
-        // }
-        // else if(goalType == "ChecklistGoal") {
-        //     goal.SetTimesCompleted(1);
-            
-        //     int timesToComplete = goal.GetTimesToComplete();
-        //     int timesCompleted = goal.GetTimesCompleted();
-        //     int bonusPoints = goal.GetBonusPoints();
-
-        //     if(timesCompleted % timesToComplete == 0) {
-        //         points = bonusPoints;
-        //         points += goal.GetPoints();
-
-        //         goal.SetIsComplete(true);
-        //         Console.WriteLine($"Congratulations!! You get a bonus of {bonusPoints} points");
-        //     }
-        //     else {
-        //         points = goal.GetPoints();
-        //     }
+        
         return points;
         }
 
