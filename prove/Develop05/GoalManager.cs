@@ -26,15 +26,6 @@ public class GoalManager
         }
     }
 
-    public int RecordEvent(List<Goal> goalsList, string strIndex) {
-        int index = int.Parse(strIndex) - 1;
-        Goal goal = goalsList[index];
-
-        int points = goal.RecordEvent();
-        
-        return points;
-        }
-
     public void ListGoals(List<Goal> goalsList) {
         if(goalsList.Count > 0) {
             Console.WriteLine("The goals are");

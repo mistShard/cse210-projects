@@ -126,8 +126,12 @@ What kind of goal o you want to create: ");
 
                 if(check) {
                     string recordResponse = Console.ReadLine();
+                    int index = int.Parse(recordResponse) - 1;
+                    
+                    Goal goal = goalsList[index];
 
-                    totalPoints += manager.RecordEvent(goalsList, recordResponse);
+                    totalPoints += goal.RecordEvent();
+    
                 }
             }
 
